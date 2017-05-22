@@ -1,0 +1,7 @@
+{
+  "execPath": "g++",
+  "gccDefaultCppFlags": "-c -fsyntax-only -Wall -Wextra -std=gnu++11 -I./src/ -I./external/powerslaves",
+  "gccErrorLimit": -1,
+  "gccIncludePaths": "./external/powerslaves,./src",
+  "gccSuppressWarnings": false
+}

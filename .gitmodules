@@ -1,0 +1,3 @@
+[submodule "external/powerslaves"]
+	path = external/powerslaves
+	url = https://github.com/kitling/powerslaves.git
