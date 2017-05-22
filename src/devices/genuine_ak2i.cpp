@@ -1,9 +1,6 @@
 #include <cstring>
 #include <algorithm>
-
-extern "C" { // TODO: fix this in the powerslaves header itself.
 #include <powerslaves.h>
-}
 
 #include "../device.h"
 
@@ -25,7 +22,7 @@ class Genuine_ak2i_44 : protected Flashcart {
         // 0xDA..0x5A on R4i Gold 3DS
         static const uint8_t ak2i_cmdWriteByteFlash[8];
 
-        static void waitFlashBusy() {
+        virtual void waitFlashBusy() {
             uint8_t state[4];
             while (true) {
                 powerslaves_sendreceive(NTR, ak2i_cmdWaitFlashBusy, 4, state);

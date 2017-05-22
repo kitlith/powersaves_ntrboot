@@ -20,7 +20,7 @@ protected:
         static const uint8_t NTR_cmdChipid[8];
 
         static void reset();
-        static void waitFlashBusy();
+        virtual void waitFlashBusy() = 0;
 
         virtual void formatReadCommand(uint8_t *cmdbuf, uint32_t address) = 0;
         virtual void formatEraseCommand(uint8_t *cmdbuf, uint32_t address) = 0;

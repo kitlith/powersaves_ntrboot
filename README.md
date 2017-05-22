@@ -34,6 +34,7 @@ the default length.
  - Acekard 2i revision 44
  - Acekard 2i revision 81
  - R4i Ultra -- This appears to be identical to the ak2i, meaning it'll be caught by the same code.
+ - R4i Gold 3DS -- Untested, I heard from someone that the powersaves doesn't like communicating with it?
 
 If you have a cart that you think could be supported, open an issue! Please
 provide a way of obtaining the software used to write the firmware, if you do so.

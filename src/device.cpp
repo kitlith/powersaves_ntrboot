@@ -1,9 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-
-extern "C" {
 #include <powerslaves.h>
-}
 
 #include "device.h"
 
