@@ -23,6 +23,8 @@ extern "C" { // TODO: fix this in the powerslaves header itself.
 
 #include "device.h"
 
+std::vector<Flashcart*> flashcart_list;
+
 enum behavior {
     AK2I_DUMP_FLASH,
     AK2I_WRITE_FLASH,
