@@ -131,7 +131,7 @@ class Genuine_ak2i_81 : protected Genuine_ak2i_44 {
             powerslaves_sendreceive(NTR, NTR_cmdChipid, 4, (uint8_t*)&chipid);
             if (chipid != 0x00000FC2) return false;
 
-            powerslaves_sendreceive(NTR, ak2i_cmdGetHWRevision, 0, (uint8_t*)&hw_revision); // Get HW Revision
+            powerslaves_sendreceive(NTR, ak2i_cmdGetHWRevision, 4, (uint8_t*)&hw_revision); // Get HW Revision
             if (hw_revision != 0x81818181) return false;
 
             powerslaves_send(NTR, ak2i_cmdSetMapTableAddress, 0);
