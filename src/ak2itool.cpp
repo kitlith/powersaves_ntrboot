@@ -74,11 +74,6 @@ static void parse_args(int argc, char *argv[], struct args *arg) {
     }
 }
 
-static const uint8_t dummy_cmd[] = {0x9F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-static const uint8_t chipid_cmd[] = {0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-
-#define readChipID(buf) powerslaves_sendreceive(NTR, chipid_cmd, 4, buf)
-
 int main(int argc, char *argv[]) {
     struct args arg;
     parse_args(argc, argv, &arg);
