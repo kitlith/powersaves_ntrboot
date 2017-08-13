@@ -85,10 +85,10 @@ int main(int argc, char *argv[]) {
     }
     memset(buffer, 0, arg.flash_len);
 
-    if (powerslaves_select(nullptr)) {
-        puts("Failed to initialize powerslaves!");
-        exit(EXIT_FAILURE);
-    }
+    //if (powerslaves_select(nullptr)) {
+    //    puts("Failed to initialize powerslaves!");
+    //    exit(EXIT_FAILURE);
+    //}
 
     Flashcart *cart = Flashcart::detectCart();
 
