@@ -1,3 +1,6 @@
 [submodule "external/powerslaves"]
 	path = external/powerslaves
 	url = https://github.com/kitling/powerslaves.git
+[submodule "external/flashcart_core"]
+	path = external/flashcart_core
+	url = https://github.com/kitling/flashcart_core

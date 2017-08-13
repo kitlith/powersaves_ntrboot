@@ -20,10 +20,7 @@ using std::memcpy;
 extern "C" { // TODO: fix this in the powerslaves header itself.
 #include <powerslaves.h>
 }
-
-#include "device.h"
-
-std::vector<Flashcart*> flashcart_list;
+#include <device.h>
 
 enum behavior {
     AK2I_DUMP_FLASH,
@@ -98,13 +95,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    Flashcart *cart = nullptr;
-    for (Flashcart *possibility: flashcart_list) {
-        if(possibility->setup()) {
-            cart = possibility;
-            break;
-        }
-    }
+    Flashcart *cart = Flashcart::detectCart();
 
     if (cart == nullptr) {
         puts("No ak2i (clone) found!");
@@ -134,7 +125,7 @@ int main(int argc, char *argv[]) {
             fread(buffer, arg.flash_len, 1, flashfile);
             fclose(flashfile);
             puts("Flashing cartridge. This may take a while.\n");
-            cart->eraseFlash(0, arg.flash_len);
+            //cart->eraseFlash(0, arg.flash_len);
             cart->writeFlash(0, arg.flash_len, buffer);
 
             // TODO: verify the flash?

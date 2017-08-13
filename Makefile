@@ -1,13 +1,21 @@
-CXXFLAGS := -pipe -O2 -Wall -Wextra -Iexternal/powerslaves -std=c++11
+CXXFLAGS := -pipe -O2 -Wall -Wextra -std=c++11 \
+	-Iexternal/powerslaves -Iexternal/flashcart_core \
+	-Isrc
 LDLIBS := -lhidapi-libusb
 
-SOURCE_FILES := src/ak2itool.cpp $(wildcard src/devices/*.cpp) src/device.cpp
+SOURCE_FILES := src/ak2itool.cpp \
+	$(wildcard external/flashcart_core/devices/*.cpp) \
+	external/flashcart_core/device.cpp
 
 OBJECT_FILES := $(SOURCE_FILES:.cpp=.o) external/powerslaves/libpowerslaves.a
 
 all: ak2itool
 
 external/powerslaves:
+	git submodule init
+	git submodule update
+
+external/flashcart_core:
 	git submodule init
 	git submodule update
 
