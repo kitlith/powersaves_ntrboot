@@ -3,8 +3,8 @@ CXXFLAGS := -pipe -O2 -Wall -Wextra -std=c++11 \
 	-Isrc
 LDLIBS := -lhidapi-libusb
 
-SOURCE_FILES := src/ak2itool.cpp \
-	$(wildcard src/gamecart/*.cpp) \
+SOURCE_FILES := \
+	$(wildcard src/*.cpp) \
 	$(wildcard external/flashcart_core/devices/*.cpp) \
 	external/flashcart_core/device.cpp
 
@@ -27,6 +27,6 @@ ak2itool: $(OBJECT_FILES)
 	$(CXX) $(CXXFLAGS) $^ $(LDLIBS) -o $@
 
 clean:
-	rm -f ak2itool src/*.o src/gamecart/*.o
+	rm -f ak2itool src/*.o
 	rm -f external/flashcart_core/*.o external/flashcart_core/devices/*.o
 	make -C external/powerslaves/ clean
